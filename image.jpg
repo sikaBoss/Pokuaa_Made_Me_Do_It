@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pokuaa Made Me Do It | Luxury Press-On Nails</title>
+<meta name="description" content="Luxury press-on nails by Pokuaa Made Me Do It. Salon-grade, reusable, hand-finished.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080708;--burgundy:#1A080F;--wine:#2A0D18;--raspberry:#D4145A;--rose:#B96F7D;--text:#F5F2F2;--muted:#A8A2A5;--card:#171617}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(8,7,8,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(212,20,90,.12);height:68px;display:flex;align-items:center}
+.nav-in{max-width:1200px;margin:0 auto;padding:0 1.4rem;width:100%;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:500}
+.logo span{display:block;font-family:'Inter',sans-serif;font-size:.55rem;letter-spacing:2px;color:var(--raspberry);text-transform:uppercase;margin-top:2px}
+.nav-links{display:flex;gap:1.8rem;list-style:none}
+.nav-links a{font-size:.75rem;font-weight:500;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);transition:color .2s}
+.nav-links a:hover{color:var(--raspberry)}
+.nav-cta{background:var(--raspberry);color:#fff;font-size:.7rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:.55rem 1.2rem;border-radius:50px;border:none}
+.nav-cta:hover{background:#e01866}
+.ham{display:none;background:none;border:none;color:var(--text);font-size:1.4rem}
+.mob{display:none;position:fixed;top:68px;left:0;right:0;background:var(--bg);border-bottom:1px solid rgba(212,20,90,.15);padding:1.2rem;z-index:999;flex-direction:column;gap:1rem}
+.mob.open{display:flex}
+.mob a{font-size:.85rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted);padding:.3rem 0}
+.hero{min-height:100vh;display:flex;align-items:center;padding:90px 0 50px;background:linear-gradient(160deg,var(--bg),var(--burgundy) 50%,var(--wine))}
+.hero-in{max-width:1200px;margin:0 auto;padding:0 1.4rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;width:100%}
+.hero-eye{font-size:.68rem;letter-spacing:3.5px;text-transform:uppercase;color:var(--raspberry);font-weight:500;margin-bottom:1.2rem}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,5.5vw,4.2rem);font-weight:500;line-height:1.08;margin-bottom:1.3rem}
+.hero h1 em{font-style:italic;color:var(--raspberry)}
+.hero p{font-size:1rem;color:var(--muted);max-width:380px;margin-bottom:2rem;line-height:1.7}
+.hero p strong{color:var(--text);font-weight:500}
+.btns{display:flex;flex-wrap:wrap;gap:.8rem}
+.btn{background:var(--raspberry);color:#fff;border:none;padding:.9rem 1.7rem;font-size:.78rem;font-weight:600;letter-spacing:1.1px;text-transform:uppercase;border-radius:50px;transition:all .2s;display:inline-block}
+.btn:hover{background:#e01866;transform:translateY(-1px)}
+.btn-out{background:transparent;color:var(--text);border:1px solid rgba(245,242,242,.28);padding:.9rem 1.7rem;font-size:.78rem;font-weight:500;letter-spacing:1.1px;text-transform:uppercase;border-radius:50px;transition:all .2s;display:inline-block}
+.btn-out:hover{border-color:var(--raspberry);color:var(--raspberry)}
+.hero-img img{width:100%;max-width:400px;border-radius:12px;border:1px solid rgba(212,20,90,.18);box-shadow:0 20px 50px rgba(0,0,0,.45);aspect-ratio:3/4;object-fit:cover}
+.sec{padding:5rem 0}
+.sec-in{max-width:1200px;margin:0 auto;padding:0 1.4rem}
+.eye{font-size:.65rem;letter-spacing:3px;text-transform:uppercase;color:var(--raspberry);font-weight:600;margin-bottom:.4rem}
+.sec h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.4rem);font-weight:500;margin-bottom:.5rem}
+.sub{font-size:.95rem;color:var(--muted);max-width:460px;line-height:1.6}
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.5rem}
+.gal-card{background:var(--card);border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.04);cursor:pointer;transition:transform .3s,border-color .3s}
+.gal-card:hover{transform:translateY(-5px);border-color:rgba(212,20,90,.3)}
+.gal-card img{width:100%;aspect-ratio:1;object-fit:cover}
+.gal-info{padding:1rem 1.1rem}
+.gal-info h3{font-family:'Playfair Display',serif;font-size:1rem;font-weight:500;margin-bottom:.2rem}
+.gal-info p{font-size:.8rem;color:var(--muted)}
+.shop{background:var(--burgundy)}
+.shop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.5rem}
+.prod{background:var(--card);border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.04);position:relative;transition:transform .3s,border-color .3s}
+.prod:hover{transform:translateY(-5px);border-color:rgba(212,20,90,.3)}
+.prod.oos{opacity:.65}
+.prod img{width:100%;aspect-ratio:1;object-fit:cover}
+.badge{position:absolute;top:10px;left:10px;font-size:.65rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:.25rem .6rem;border-radius:50px}
+.badge-in{background:rgba(40,160,80,.9);color:#fff}
+.badge-out{background:rgba(140,40,40,.9);color:#fff}
+.prod-info{padding:1.1rem}
+.prod-info h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:500;margin-bottom:.2rem}
+.prod-meta{font-size:.72rem;color:var(--muted);margin-bottom:.4rem}
+.prod-info p{font-size:.82rem;color:var(--muted);margin-bottom:.8rem;line-height:1.4}
+.prod-bot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+.price{font-size:1.15rem;font-weight:700;color:var(--raspberry)}
+.btn-wa{background:var(--raspberry);color:#fff;border:none;padding:.5rem 1rem;font-size:.7rem;font-weight:600;letter-spacing:.5px;text-transform:uppercase;border-radius:50px}
+.btn-wa:hover{background:#e01866}
+.btn-wa:disabled{background:#444;color:#888;cursor:not-allowed}
+.care{background:var(--bg)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;margin-top:2.5rem}
+.step{background:var(--card);border-radius:10px;padding:1.4rem 1rem;text-align:center;border:1px solid rgba(255,255,255,.04)}
+.step-n{width:40px;height:40px;border:1px solid rgba(212,20,90,.4);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto .9rem;font-size:.85rem;font-weight:600;color:var(--raspberry)}
+.step h4{font-size:.82rem;font-weight:600;letter-spacing:.5px;text-transform:uppercase;margin-bottom:.4rem}
+.step p{font-size:.78rem;color:var(--muted);line-height:1.5}
+.contact{background:var(--burgundy)}
+.ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:2.2rem}
+.ct-card{background:var(--card);border-radius:10px;padding:1.3rem;border:1px solid rgba(255,255,255,.04);display:flex;gap:.9rem;align-items:flex-start}
+.ct-icon{width:40px;height:40px;border-radius:50%;background:rgba(212,20,90,.12);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;color:var(--raspberry)}
+.ct-card h4{font-size:.72rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem}
+.ct-card a{font-size:.92rem;font-weight:500;transition:color .2s}
+.ct-card a:hover{color:var(--raspberry)}
+.wa-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.3rem}
+.wa-b{background:var(--raspberry);color:#fff;font-size:.75rem;font-weight:600;padding:.4rem .9rem;border-radius:50px}
+.wa-b:hover{background:#e01866}
+footer{background:var(--bg);border-top:1px solid rgba(212,20,90,.12);padding:3.5rem 0 1.5rem}
+.ft-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2.5rem}
+.ft-col h4{font-size:.7rem;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:1rem;font-weight:600}
+.ft-col ul{list-style:none}
+.ft-col li{margin-bottom:.4rem}
+.ft-col a{font-size:.84rem;color:var(--muted);transition:color .2s}
+.ft-col a:hover{color:var(--raspberry)}
+.ft-bot{border-top:1px solid rgba(255,255,255,.06);padding-top:1.2rem;display:flex;justify-content:space-between;align-items:center;font-size:.78rem;color:var(--muted)}
+.ft-soc{display:flex;gap:1rem}
+.ft-soc a{font-size:1.1rem;color:var(--muted);transition:color .2s}
+.ft-soc a:hover{color:var(--raspberry)}
+.float-wa{position:fixed;bottom:22px;right:22px;z-index:900;background:var(--raspberry);color:#fff;width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;box-shadow:0 6px 22px rgba(212,20,90,.4);transition:transform .2s}
+.float-wa:hover{transform:scale(1.08)}
+.admin-fab{position:fixed;bottom:22px;left:22px;z-index:900;background:var(--card);color:var(--muted);border:1px solid rgba(255,255,255,.1);padding:.5rem 1rem;border-radius:50px;font-size:.72rem;font-weight:600;letter-spacing:.5px}
+.admin-fab:hover{border-color:var(--raspberry);color:var(--raspberry)}
+.lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:3000;align-items:center;justify-content:center;padding:1.5rem}
+.lb.open{display:flex}
+.lb img{max-width:90vw;max-height:85vh;border-radius:8px;object-fit:contain}
+.lb-x{position:absolute;top:1rem;right:1.5rem;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer}
+.adm{display:none;position:fixed;inset:0;background:var(--bg);z-index:2500;overflow-y:auto}
+.adm.open{display:block}
+.adm-top{background:var(--card);border-bottom:1px solid rgba(212,20,90,.2);padding:1rem 1.4rem;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10}
+.adm-top h2{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:500}
+.adm-close{background:none;border:none;color:var(--muted);font-size:1.5rem}
+.adm-close:hover{color:var(--raspberry)}
+.adm-body{max-width:1100px;margin:0 auto;padding:1.5rem}
+.adm-tabs{display:flex;gap:.3rem;margin-bottom:1.5rem;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:.5rem}
+.adm-tab{background:none;border:none;color:var(--muted);font-size:.8rem;font-weight:600;padding:.5rem 1rem;border-radius:6px;letter-spacing:.3px}
+.adm-tab.active,.adm-tab:hover{background:rgba(212,20,90,.15);color:var(--raspberry)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:1.5rem}
+.stat{background:var(--card);border-radius:10px;padding:1.2rem;border:1px solid rgba(255,255,255,.05);text-align:center}
+.stat-n{font-size:1.8rem;font-weight:700;color:var(--raspberry);font-family:'Playfair Display',serif}
+.stat-l{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-top:.2rem}
+.box{background:var(--card);border-radius:10px;padding:1.3rem;border:1px solid rgba(255,255,255,.05);margin-bottom:1.3rem}
+.box h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:500;margin-bottom:1rem}
+.fg{margin-bottom:.85rem}
+.fg label{display:block;font-size:.75rem;font-weight:600;color:var(--muted);margin-bottom:.3rem}
+.fg input,.fg textarea,.fg select{width:100%;padding:.65rem .8rem;background:var(--bg);border:1px solid rgba(255,255,255,.1);border-radius:6px;color:var(--text);font-family:inherit;font-size:.9rem}
+.fg input:focus,.fg textarea:focus,.fg select:focus{outline:none;border-color:var(--raspberry)}
+.fg textarea{min-height:70px;resize:vertical}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.btn-a{background:var(--raspberry);color:#fff;border:none;padding:.55rem 1.1rem;border-radius:6px;font-size:.8rem;font-weight:600}
+.btn-a:hover{background:#e01866}
+.btn-o{background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,.15);padding:.55rem 1.1rem;border-radius:6px;font-size:.8rem;font-weight:600}
+.btn-o:hover{border-color:var(--text);color:var(--text)}
+.btn-d{background:transparent;color:var(--rose);border:1px solid var(--rose);padding:.45rem .9rem;border-radius:6px;font-size:.75rem;font-weight:600}
+.btn-d:hover{background:var(--rose);color:#fff}
+.alist{display:flex;flex-direction:column;gap:.8rem}
+.aitem{background:var(--bg);border-radius:8px;padding:1rem;border-left:3px solid var(--raspberry);display:flex;gap:.8rem;align-items:flex-start}
+.aitem img{width:56px;height:56px;object-fit:cover;border-radius:6px;flex-shrink:0}
+.aitem h4{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:500}
+.aitem .meta{font-size:.78rem;color:var(--muted);margin:.2rem 0}
+.aitem .acts{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.5rem}
+.tag{font-size:.65rem;font-weight:700;padding:.15rem .45rem;border-radius:4px;text-transform:uppercase}
+.tag-in{background:rgba(40,160,80,.2);color:#4ade80}
+.tag-out{background:rgba(160,40,40,.2);color:#f87171}
+.file-lab{display:inline-block;padding:.45rem .9rem;background:var(--bg);border:1px solid rgba(255,255,255,.12);border-radius:6px;font-size:.75rem;color:var(--muted);cursor:pointer;margin-top:.2rem}
+.file-lab:hover{border-color:var(--raspberry);color:var(--raspberry)}
+input[type=file]{display:none}
+.prev{width:70px;height:70px;object-fit:cover;border-radius:6px;margin-top:.4rem;border:1px solid rgba(255,255,255,.1)}
+.empty{text-align:center;padding:2rem;color:var(--muted);font-size:.9rem}
+.login-box{max-width:360px;margin:4rem auto;background:var(--card);border-radius:12px;padding:2rem;border:1px solid rgba(212,20,90,.2)}
+.login-box h2{font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:1.2rem;text-align:center}
+.toast{position:fixed;top:80px;right:1.5rem;background:var(--card);border:1px solid var(--raspberry);color:var(--text);padding:.8rem 1.3rem;border-radius:8px;font-size:.85rem;z-index:4000;opacity:0;transform:translateY(-10px);transition:all .3s;pointer-events:none}
+.toast.show{opacity:1;transform:translateY(0)}
+.sec-warn{background:rgba(212,20,90,.12);border:1px solid rgba(212,20,90,.4);border-radius:10px;padding:1rem 1.2rem;margin-bottom:1.3rem;display:flex;gap:.8rem;align-items:flex-start}
+.sec-warn-icon{font-size:1.3rem;flex-shrink:0;line-height:1}
+.sec-warn strong{color:var(--raspberry);display:block;margin-bottom:.25rem;font-size:.88rem}
+.sec-warn p{font-size:.8rem;color:var(--muted);line-height:1.45;margin:0}
+.sec-warn a{color:var(--raspberry);font-weight:600;cursor:pointer;text-decoration:underline}
+@media(max-width:1024px){.gal-grid,.shop-grid{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}.ft-grid{grid-template-columns:1fr 1fr}.stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.nav-links,.nav-cta{display:none}.ham{display:block}.hero-in{grid-template-columns:1fr;text-align:center;gap:2rem}.hero p{margin:0 auto 1.5rem}.btns{justify-content:center}.hero-img{order:-1}.hero-img img{max-width:260px;margin:0 auto}.gal-grid,.shop-grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.ct-grid{grid-template-columns:1fr}.ft-grid{grid-template-columns:1fr;gap:1.5rem}.ft-bot{flex-direction:column;gap:.7rem;text-align:center}.frow{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.steps{grid-template-columns:1fr}.btns{flex-direction:column;align-items:center}.btn,.btn-out{width:100%;text-align:center}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-in">
+    <a href="#" class="logo">Pokuaa Made Me Do It<span>Luxury Press-On Nails • BYPOKUAA.TIPS</span></a>
+    <ul class="nav-links">
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#shop">Available Items</a></li>
+      <li><a href="#care">Care Guide</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#shop" class="nav-cta">Shop Now</a>
+    <button class="ham" id="ham" aria-label="Menu">☰</button>
+  </div>
+  <div class="mob" id="mob">
+    <a href="#gallery" onclick="closeMob()">Gallery</a>
+    <a href="#shop" onclick="closeMob()">Available Items</a>
+    <a href="#care" onclick="closeMob()">Care Guide</a>
+    <a href="#contact" onclick="closeMob()">Contact</a>
+  </div>
+</nav>
+<section class="hero" id="home">
+  <div class="hero-in">
+    <div>
+      <p class="hero-eye">Press-On. Not Settle-For.</p>
+      <h1>Pokuaa<br><em>made me</em><br>do it.</h1>
+      <p>Salon-grade sets, reusable and hand-finished — <strong>dry time, zero apologies</strong>. Browse designs or order available sets.</p>
+      <div class="btns">
+        <a href="#gallery" class="btn">Explore Gallery</a>
+        <a href="#shop" class="btn-out">Available Items</a>
+      </div>
+    </div>
+    <div class="hero-img"><img src="gallery1.jpg" alt="Luxury press-on nails by Pokuaa Made Me Do It"></div>
+  </div>
+</section>
+<section class="sec" id="gallery">
+  <div class="sec-in">
+    <p class="eye">The Collection</p>
+    <h2>Nail Gallery</h2>
+    <p class="sub">Handcrafted designs. Browse for inspiration — prices live in Available Items.</p>
+    <div class="gal-grid" id="galGrid"></div>
+  </div>
+</section>
+<section class="sec shop" id="shop">
+  <div class="sec-in">
+    <p class="eye">Ready to Wear</p>
+    <h2>Available Items</h2>
+    <p class="sub">Sets currently available for order. Tap WhatsApp to inquire.</p>
+    <div class="shop-grid" id="shopGrid"></div>
+  </div>
+</section>
+<section class="sec care" id="care">
+  <div class="sec-in">
+    <p class="eye">How To</p>
+    <h2>Application & Care</h2>
+    <p class="sub">Best fit, longest wear, gorgeous results.</p>
+    <div class="steps">
+      <div class="step"><div class="step-n">01</div><h4>Prep</h4><p>Wash hands and clean nails with an alcohol pad.</p></div>
+      <div class="step"><div class="step-n">02</div><h4>Size</h4><p>Find your best fit for each nail. Lightly buff if needed.</p></div>
+      <div class="step"><div class="step-n">03</div><h4>Apply</h4><p>Apply adhesive or tabs and hold for 10–15 seconds.</p></div>
+      <div class="step"><div class="step-n">04</div><h4>Care</h4><p>Avoid water for the first hour. Store for reuse.</p></div>
+    </div>
+  </div>
+</section>
+<section class="sec contact" id="contact">
+  <div class="sec-in">
+    <p class="eye">Get in Touch</p>
+    <h2>Contact Us</h2>
+    <p class="sub">We typically reply within a few hours.</p>
+    <div class="ct-grid">
+      <div class="ct-card"><div class="ct-icon">💬</div><div><h4>WhatsApp</h4><div class="wa-row">
+        <a class="wa-b" href="https://wa.me/233271826192?text=Hello%20Pokuaa%20Made%20Me%20Do%20It%2C%20I%27d%20like%20to%20make%20an%20inquiry%20about%20your%20press-on%20nails." target="_blank" rel="noopener">0271826192</a>
+        <a class="wa-b" href="https://wa.me/233542407799?text=Hello%20Pokuaa%20Made%20Me%20Do%20It%2C%20I%27d%20like%20to%20make%20an%20inquiry%20about%20your%20press-on%20nails." target="_blank" rel="noopener">0542407799</a>
+      </div></div></div>
+      <div class="ct-card"><div class="ct-icon">📷</div><div><h4>Instagram</h4><a href="https://instagram.com/bypokuaa.tips" target="_blank" rel="noopener">@bypokuaa.tips</a></div></div>
+      <div class="ct-card"><div class="ct-icon">👻</div><div><h4>Snapchat</h4><a href="https://www.snapchat.com/add/bypokuaa.tips" target="_blank" rel="noopener">bypokuaa.tips</a></div></div>
+      <div class="ct-card"><div class="ct-icon">✉️</div><div><h4>Email</h4><a href="mailto:pokuaamademedoit@gmail.com">pokuaamademedoit@gmail.com</a></div></div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="sec-in">
+    <div class="ft-grid">
+      <div><a href="#" class="logo">Pokuaa Made Me Do It<span>Luxury Press-On Nails • BYPOKUAA.TIPS</span></a><p style="font-size:.84rem;color:var(--muted);margin-top:.7rem;max-width:230px">Press-on. Not settle-for. Zero dry time, zero apologies.</p></div>
+      <div class="ft-col"><h4>Explore</h4><ul><li><a href="#gallery">Gallery</a></li><li><a href="#shop">Available Items</a></li><li><a href="#care">Care Guide</a></li></ul></div>
+      <div class="ft-col"><h4>Info</h4><ul><li><a href="#care">Application</a></li><li><a href="#contact">Contact</a></li></ul></div>
+      <div class="ft-col"><h4>Connect</h4><ul><li><a href="https://instagram.com/bypokuaa.tips" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://wa.me/233271826192" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:pokuaamademedoit@gmail.com">Email</a></li></ul></div>
+    </div>
+    <div class="ft-bot">
+      <p>© 2026 Pokuaa Made Me Do It. All rights reserved.</p>
+      <div class="ft-soc">
+        <a href="https://instagram.com/bypokuaa.tips" target="_blank" rel="noopener" aria-label="Instagram">📷</a>
+        <a href="https://www.snapchat.com/add/bypokuaa.tips" target="_blank" rel="noopener" aria-label="Snapchat">👻</a>
+        <a href="https://wa.me/233271826192" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+        <a href="mailto:pokuaamademedoit@gmail.com" aria-label="Email">✉️</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<a href="https://wa.me/233271826192?text=Hello%20Pokuaa%20Made%20Me%20Do%20It%2C%20I%27d%20like%20to%20make%20an%20inquiry%20about%20your%20press-on%20nails." class="float-wa" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+<button class="admin-fab" onclick="openAdmin()">Admin</button>
+<div class="lb" id="lb" onclick="closeLb()"><button class="lb-x" onclick="closeLb()">&times;</button><img id="lbImg" src="" alt=""></div>
+<div class="toast" id="toast"></div>
+<div class="adm" id="adm">
+  <div class="adm-top"><h2>Admin Dashboard</h2><button class="adm-close" onclick="closeAdmin()">&times;</button></div>
+  <div class="adm-body" id="admBody"></div>
+</div>
+<script>
+const WA1='233271826192',WA2='233542407799';
+const DEFAULT_PW='pokuaa123';
+function getPw(){return localStorage.getItem('pmm_admin_pw')||DEFAULT_PW}
+function setPw(p){localStorage.setItem('pmm_admin_pw',p)}
+const DEFAULT_GALLERY = [{"id": 1, "name": "Tropical Mix", "caption": "Leopard, floral & French tips", "image":"gallery1.jpg", "visible": true}, {"id": 2, "name": "Signature Assortment", "caption": "Cherries, leopard, florals & French", "image": "gallery2.jpg", "visible": true}, {"id": 3, "name": "Pink French Luxe", "caption": "Soft pink French with gold charms", "image": "gallery3.jpg", "visible": true}, {"id": 4, "name": "Berry Blossom", "caption": "Burgundy florals & polka dots", "image": "g4.jpg", "visible": true}, {"id": 5, "name": "Cherry Bow", "caption": "Pink with cherries and bows", "image": "g5.jpg", "visible": true}, {"id": 6, "name": "Polka Floral", "caption": "Burgundy tips with white florals", "image": "g6.jpg", "visible": true}, {"id": 7, "name": "Tiger Pink", "caption": "Pink tiger print with bows", "image": "g8.jpg", "visible": true}, {"id": 8, "name": "Sakura French", "caption": "Pink florals on French tips", "image": "g10.jpg", "visible": true}, {"id": 9, "name": "Princess Hour", "caption": "Elegant burgundy & gold accents", "image": "g11.jpg", "visible": true}, {"id": 10, "name": "Orchid Bloom", "caption": "Pink orchids with black French", "image": "g12.jpg", "visible": true}, {"id": 11, "name": "Ruby Heart", "caption": "Deep red chrome & florals", "image": "g14.jpg", "visible": true}, {"id": 12, "name": "Polka On Hand", "caption": "Burgundy florals worn", "image": "g15.jpg", "visible": true}, {"id": 13, "name": "Soft Blossom", "caption": "3D florals in soft pink", "image": "g16.jpg", "visible": true}, {"id": 14, "name": "Chocolate Floral", "caption": "Brown & pink florals", "image": "g19.jpg", "visible": true}, {"id": 15, "name": "Worn Soft Floral", "caption": "Soft florals on hand", "image": "g21.jpg", "visible": true}];
+let gallery = JSON.parse(localStorage.getItem('pmm_gal_v3') || 'null') || DEFAULT_GALLERY;
+let products = JSON.parse(localStorage.getItem('pmm_prod') || 'null') || [];
+let loggedIn=false, tab='overview', editProd=null, editGal=null;
+let nextG = Math.max(0,...gallery.map(g=>g.id))+1;
+let nextP = products.length ? Math.max(...products.map(p=>p.id))+1 : 1;
+function saveG(){localStorage.setItem('pmm_gal_v3',JSON.stringify(gallery))}
+function saveP(){localStorage.setItem('pmm_prod',JSON.stringify(products))}
+function fmt(n){return 'GH₵ '+Number(n).toFixed(0)}
+function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500)}
+function renderGal(){
+  const el=document.getElementById('galGrid');
+  const items=gallery.filter(g=>g.visible!==false);
+  if(!items.length){el.innerHTML='<div class="empty" style="grid-column:1/-1">Gallery coming soon.</div>';return}
+  el.innerHTML=items.map(g=>`<div class="gal-card" onclick="openLb('${g.image}')"><img src="${g.image}" alt="${g.name}" loading="lazy"><div class="gal-info"><h3>${g.name}</h3><p>${g.caption||''}</p></div></div>`).join('');
+}
+function renderShop(){
+  const el=document.getElementById('shopGrid');
+  if(!products.length){el.innerHTML='<div class="empty" style="grid-column:1/-1">Products will appear here when they become available.</div>';return}
+  el.innerHTML=products.map(p=>{
+    const avail=p.stock>0;
+    return `<div class="prod ${avail?'':'oos'}"><span class="badge ${avail?'badge-in':'badge-out'}">${avail?'Available':'Out of Stock'}</span>
+      <img src="${p.image||''}" alt="${p.name}" loading="lazy" onerror="this.style.background='#2A0D18'">
+      <div class="prod-info"><h3>${p.name}</h3><div class="prod-meta">${[p.shape,p.length,p.category].filter(Boolean).join(' · ')}</div>
+      <p>${p.desc||''}</p><div class="prod-bot"><span class="price">${fmt(p.price)}</span>
+      ${avail?`<button class="btn-wa" onclick="waProd('${(p.name||'').replace(/'/g,"\\'")}',${p.price})">Ask on WhatsApp</button>`:`<button class="btn-wa" disabled>Out of Stock</button>`}
+      </div></div></div>`;
+  }).join('');
+}
+function waProd(name,price){const msg=`Hello, I'm interested in the ${name} press-on nail set priced at ${fmt(price)}. Is it available?`;window.open(`https://wa.me/${WA1}?text=${encodeURIComponent(msg)}`,'_blank')}
+function openLb(src){document.getElementById('lbImg').src=src;document.getElementById('lb').classList.add('open')}
+function closeLb(){document.getElementById('lb').classList.remove('open')}
+function openAdmin(){document.getElementById('adm').classList.add('open');if(!loggedIn)showLogin();else showDash()}
+function closeAdmin(){document.getElementById('adm').classList.remove('open');loggedIn=false;editProd=null;editGal=null}
+function showLogin(){
+  const defNote = getPw()===DEFAULT_PW ? `<p style="font-size:.75rem;color:var(--rose);text-align:center;margin-top:.9rem">⚠️ Default password is still active. Change it after login.</p>` : '';
+  document.getElementById('admBody').innerHTML=`<div class="login-box"><h2>Admin Login</h2><div class="fg"><label>Password</label><input type="password" id="pw" onkeypress="if(event.key==='Enter')doLogin()"></div><button class="btn-a" style="width:100%;margin-top:.5rem" onclick="doLogin()">Login</button>${defNote}</div>`;
+}
+function doLogin(){if(document.getElementById('pw').value===getPw()){loggedIn=true;showDash();toast('Logged in')}else toast('Incorrect password')}
+function showDash(){
+  document.getElementById('admBody').innerHTML=`<div class="adm-tabs">
+    <button class="adm-tab ${tab==='overview'?'active':''}" onclick="setTab('overview')">Overview</button>
+    <button class="adm-tab ${tab==='gallery'?'active':''}" onclick="setTab('gallery')">Gallery</button>
+    <button class="adm-tab ${tab==='products'?'active':''}" onclick="setTab('products')">Products</button>
+    <button class="adm-tab ${tab==='restock'?'active':''}" onclick="setTab('restock')">Restocking</button>
+    <button class="adm-tab ${tab==='settings'?'active':''}" onclick="setTab('settings')">Settings</button>
+  </div><div id="tabContent"></div>`;
+  if(tab==='overview')rendOverview();else if(tab==='gallery')rendGalAdmin();else if(tab==='products')rendProdAdmin();else if(tab==='restock')rendRestock();else if(tab==='settings')rendSettings();
+}
+function setTab(t){tab=t;editProd=null;editGal=null;showDash()}
+function rendOverview(){
+  const avail=products.filter(p=>p.stock>0).length,oos=products.filter(p=>p.stock<=0).length;
+  const isDefault = getPw()===DEFAULT_PW;
+  const warnHtml = isDefault ? `<div class="sec-warn"><div class="sec-warn-icon">⚠️</div><div>
+    <strong>Security Warning — Default Password in Use</strong>
+    <p>You are still using the default admin password. Please <a onclick="setTab('settings')">change your password in Settings</a> now.</p>
+  </div></div>` : '';
+  document.getElementById('tabContent').innerHTML=warnHtml+`<div class="stats">
+    <div class="stat"><div class="stat-n">${products.length}</div><div class="stat-l">Total Products</div></div>
+    <div class="stat"><div class="stat-n">${avail}</div><div class="stat-l">Available</div></div>
+    <div class="stat"><div class="stat-n">${oos}</div><div class="stat-l">Out of Stock</div></div>
+    <div class="stat"><div class="stat-n">${gallery.filter(g=>g.visible!==false).length}</div><div class="stat-l">Gallery Images</div></div>
+  </div><div class="box"><h3>Quick Actions</h3><div style="display:flex;gap:.6rem;flex-wrap:wrap">
+    <button class="btn-a" onclick="setTab('products')">Add Product</button>
+    <button class="btn-a" onclick="setTab('gallery')">Manage Gallery</button>
+    <button class="btn-a" onclick="setTab('restock')">Restock Items</button></div></div>`;
+}
+function rendGalAdmin(){
+  let form=editGal!==null?(function(){const g=gallery.find(x=>x.id===editGal)||{};return `<div class="box"><h3>Edit Gallery Item</h3>
+    <div class="fg"><label>Name</label><input id="gn" value="${(g.name||'').replace(/"/g,'&quot;')}"></div>
+    <div class="fg"><label>Caption</label><input id="gc" value="${(g.caption||'').replace(/"/g,'&quot;')}"></div>
+    <div class="fg"><label>Visible</label><select id="gv"><option value="true" ${g.visible!==false?'selected':''}>Visible</option><option value="false" ${g.visible===false?'selected':''}>Hidden</option></select></div>
+    <div class="fg"><label>Image</label><label class="file-lab">Change Image<input type="file" id="gi" accept="image/*" onchange="prevF(this,'gp')"></label>
+      ${g.image?`<img src="${g.image}" class="prev" id="gp">`:`<img class="prev" id="gp" style="display:none">`}</div>
+    <div style="display:flex;gap:.5rem;margin-top:.6rem"><button class="btn-a" onclick="saveGal()">Save</button><button class="btn-o" onclick="editGal=null;rendGalAdmin()">Cancel</button></div></div>`})()
+  :`<div class="box"><h3>+ Add Gallery Image</h3><p style="font-size:.78rem;color:var(--muted);margin-bottom:.8rem">Gallery images have NO prices.</p>
+    <div class="fg"><label>Name *</label><input id="gn" placeholder="e.g. Tropical Mix"></div>
+    <div class="fg"><label>Caption</label><input id="gc" placeholder="Short description"></div>
+    <div class="fg"><label>Image *</label><label class="file-lab">Choose Image<input type="file" id="gi" accept="image/*" onchange="prevF(this,'gp')"></label><img class="prev" id="gp" style="display:none"></div>
+    <button class="btn-a" style="margin-top:.5rem" onclick="saveGal()">Add to Gallery</button></div>`;
+  const list=gallery.length?`<div class="alist">${gallery.map(g=>`<div class="aitem">${g.image?`<img src="${g.image}" alt="">`:''}<div style="flex:1"><h4>${g.name}</h4><div class="meta">${g.caption||''} ${g.visible===false?'· Hidden':''}</div>
+    <div class="acts"><button class="btn-a" onclick="editGal=${g.id};rendGalAdmin()">Edit</button><button class="btn-d" onclick="delGal(${g.id})">Delete</button></div></div></div>`).join('')}</div>`:'<div class="empty">No gallery items yet.</div>';
+  document.getElementById('tabContent').innerHTML=form+`<div class="box"><h3>Gallery Items (${gallery.length})</h3>`+list+'</div>';
+}
+function prevF(inp,pid){const p=document.getElementById(pid);if(inp.files&&inp.files[0]){const r=new FileReader();r.onload=e=>{p.src=e.target.result;p.style.display='block';p.dataset.b64=e.target.result};r.readAsDataURL(inp.files[0])}}
+function saveGal(){
+  const name=document.getElementById('gn').value.trim(),caption=document.getElementById('gc').value.trim();
+  const vis=document.getElementById('gv')?document.getElementById('gv').value==='true':true;
+  const prev=document.getElementById('gp'),img=prev.dataset.b64||prev.src||null;
+  if(!name){toast('Name required');return}
+  if(editGal!==null){const g=gallery.find(x=>x.id===editGal);if(g){g.name=name;g.caption=caption;g.visible=vis;if(img&&img.startsWith('data:'))g.image=img}editGal=null}
+  else{if(!img||!img.startsWith('data:')){toast('Please choose an image');return}gallery.push({id:nextG++,name,caption,image:img,visible:true})}
+  saveG();renderGal();rendGalAdmin();toast('Gallery updated');
+}
+function delGal(id){if(!confirm('Delete this gallery image?'))return;gallery=gallery.filter(g=>g.id!==id);saveG();renderGal();rendGalAdmin();toast('Deleted')}
+function rendProdAdmin(){
+  let form=editProd!==null?(function(){const p=products.find(x=>x.id===editProd)||{};return `<div class="box"><h3>Edit Product</h3>
+    <div class="fg"><label>Name *</label><input id="pn" value="${(p.name||'').replace(/"/g,'&quot;')}"></div>
+    <div class="fg"><label>Description</label><textarea id="pd">${p.desc||''}</textarea></div>
+    <div class="frow"><div class="fg"><label>Price (GH₵) *</label><input type="number" id="pp" value="${p.price||''}" min="0"></div>
+    <div class="fg"><label>Stock *</label><input type="number" id="ps" value="${p.stock??0}" min="0"></div></div>
+    <div class="frow"><div class="fg"><label>Category</label><input id="pc" value="${p.category||''}"></div>
+    <div class="fg"><label>Shape</label><input id="psh" value="${p.shape||''}"></div></div>
+    <div class="frow"><div class="fg"><label>Length</label><input id="pl" value="${p.length||''}"></div>
+    <div class="fg"><label>Image</label><label class="file-lab">Change Image<input type="file" id="pi" accept="image/*" onchange="prevF(this,'ppv')"></label>
+      ${p.image?`<img src="${p.image}" class="prev" id="ppv">`:`<img class="prev" id="ppv" style="display:none">`}</div></div>
+    <div style="display:flex;gap:.5rem;margin-top:.6rem"><button class="btn-a" onclick="saveProd()">Save</button><button class="btn-o" onclick="editProd=null;rendProdAdmin()">Cancel</button></div></div>`})()
+  :`<div class="box"><h3>+ Add Product</h3>
+    <div class="fg"><label>Name *</label><input id="pn" placeholder="e.g. French Elegance Set"></div>
+    <div class="fg"><label>Description</label><textarea id="pd" placeholder="Short description"></textarea></div>
+    <div class="frow"><div class="fg"><label>Price (GH₵) *</label><input type="number" id="pp" placeholder="150" min="0"></div>
+    <div class="fg"><label>Stock *</label><input type="number" id="ps" placeholder="5" min="0" value="1"></div></div>
+    <div class="frow"><div class="fg"><label>Category</label><input id="pc" placeholder="Elegant, Bold..."></div>
+    <div class="fg"><label>Shape</label><input id="psh" placeholder="Coffin, Stiletto..."></div></div>
+    <div class="frow"><div class="fg"><label>Length</label><input id="pl" placeholder="Short, Medium, Long"></div>
+    <div class="fg"><label>Image</label><label class="file-lab">Choose Image<input type="file" id="pi" accept="image/*" onchange="prevF(this,'ppv')"></label><img class="prev" id="ppv" style="display:none"></div></div>
+    <button class="btn-a" style="margin-top:.5rem" onclick="saveProd()">Add Product</button></div>`;
+  const list=products.length?`<div class="alist">${products.map(p=>`<div class="aitem">${p.image?`<img src="${p.image}" alt="">`:''}<div style="flex:1">
+    <div style="display:flex;justify-content:space-between;align-items:center"><h4>${p.name}</h4><span class="tag ${p.stock>0?'tag-in':'tag-out'}">${p.stock>0?'In Stock':'Out of Stock'}</span></div>
+    <div class="meta">${fmt(p.price)} · Stock: ${p.stock} · ${[p.shape,p.length,p.category].filter(Boolean).join(' · ')}</div>
+    <div class="acts"><button class="btn-a" onclick="editProd=${p.id};rendProdAdmin()">Edit</button>
+    <button class="btn-o" onclick="quickStock(${p.id})">Restock</button>
+    <button class="btn-d" onclick="delProd(${p.id})">Delete</button></div></div></div>`).join('')}</div>`:'<div class="empty">No products yet.</div>';
+  document.getElementById('tabContent').innerHTML=form+`<div class="box"><h3>Products (${products.length})</h3>`+list+'</div>';
+}
+function saveProd(){
+  const name=document.getElementById('pn').value.trim(),desc=document.getElementById('pd').value.trim();
+  const price=parseFloat(document.getElementById('pp').value),stock=parseInt(document.getElementById('ps').value)||0;
+  const category=document.getElementById('pc').value.trim(),shape=document.getElementById('psh').value.trim(),length=document.getElementById('pl').value.trim();
+  const prev=document.getElementById('ppv'),img=prev.dataset.b64||prev.src||null;
+  if(!name){toast('Name required');return}if(isNaN(price)||price<0){toast('Valid price required');return}
+  if(editProd!==null){const p=products.find(x=>x.id===editProd);if(p){p.name=name;p.desc=desc;p.price=price;p.stock=stock;p.category=category;p.shape=shape;p.length=length;if(img&&img.startsWith('data:'))p.image=img}editProd=null}
+  else products.push({id:nextP++,name,desc,price,stock,category,shape,length,image:img&&img.startsWith('data:')?img:null});
+  saveP();renderShop();rendProdAdmin();toast('Product saved');
+}
+function delProd(id){if(!confirm('Delete this product?'))return;products=products.filter(p=>p.id!==id);saveP();renderShop();rendProdAdmin();toast('Deleted')}
+function quickStock(id){const q=prompt('Enter new stock quantity:');if(q===null)return;const n=parseInt(q);if(isNaN(n)||n<0){toast('Invalid');return}const p=products.find(x=>x.id===id);if(p){p.stock=n;saveP();renderShop();showDash();toast('Stock updated')}}
+function rendRestock(){
+  const oos=products.filter(p=>p.stock<=0),avail=products.filter(p=>p.stock>0);
+  let html=`<div class="box"><h3>Out of Stock (${oos.length})</h3>`;
+  if(!oos.length)html+='<div class="empty">All products are in stock.</div>';
+  else html+=`<div class="alist">${oos.map(p=>`<div class="aitem">${p.image?`<img src="${p.image}">`:''}<div style="flex:1"><h4>${p.name}</h4><div class="meta">${fmt(p.price)} · Stock: 0</div>
+    <div class="acts"><input type="number" id="rs${p.id}" min="1" value="5" style="width:70px;padding:.4rem;background:var(--bg);border:1px solid rgba(255,255,255,.15);border-radius:4px;color:var(--text)">
+    <button class="btn-a" onclick="doRestock(${p.id})">Restock</button></div></div></div>`).join('')}</div>`;
+  html+=`</div><div class="box"><h3>In Stock (${avail.length})</h3>`;
+  if(!avail.length)html+='<div class="empty">No products in stock.</div>';
+  else html+=`<div class="alist">${avail.map(p=>`<div class="aitem">${p.image?`<img src="${p.image}">`:''}<div style="flex:1"><h4>${p.name}</h4><div class="meta">${fmt(p.price)} · Stock: ${p.stock}</div>
+    <div class="acts"><input type="number" id="rs${p.id}" min="0" value="${p.stock}" style="width:70px;padding:.4rem;background:var(--bg);border:1px solid rgba(255,255,255,.15);border-radius:4px;color:var(--text)">
+    <button class="btn-a" onclick="doRestock(${p.id})">Update Stock</button></div></div></div>`).join('')}</div>`;
+  html+='</div>';document.getElementById('tabContent').innerHTML=html;
+}
+function doRestock(id){const n=parseInt(document.getElementById('rs'+id).value);if(isNaN(n)||n<0){toast('Invalid');return}const p=products.find(x=>x.id===id);if(p){p.stock=n;saveP();renderShop();rendRestock();toast(p.name+' stock set to '+n)}}
+function rendSettings(){
+  const isDefault = getPw()===DEFAULT_PW;
+  const warnHtml = isDefault ? `<div class="sec-warn"><div class="sec-warn-icon">⚠️</div><div>
+    <strong>Default Password Detected</strong>
+    <p>Your admin password is still set to the default. Change it below to secure your dashboard.</p>
+  </div></div>` : '';
+  document.getElementById('tabContent').innerHTML=warnHtml+`<div class="box"><h3>Change Admin Password</h3>
+    <p style="font-size:.82rem;color:var(--muted);margin-bottom:1rem">Choose a new password. You will need it next time you log in.</p>
+    <div class="fg"><label>Current Password</label><input type="password" id="curPw" placeholder="Enter current password"></div>
+    <div class="fg"><label>New Password</label><input type="password" id="newPw" placeholder="Enter new password (min 4 characters)"></div>
+    <div class="fg"><label>Confirm New Password</label><input type="password" id="confPw" placeholder="Re-enter new password"></div>
+    <button class="btn-a" onclick="changePassword()">Update Password</button>
+  </div>
+  <div class="box"><h3>Reset to Default</h3>
+    <p style="font-size:.82rem;color:var(--muted);margin-bottom:1rem">Forgot your password? Reset to the original default password.</p>
+    <button class="btn-o" onclick="resetPassword()">Reset Password to Default</button>
+  </div>`;
+}
+function changePassword(){
+  const cur=document.getElementById('curPw').value,nw=document.getElementById('newPw').value,conf=document.getElementById('confPw').value;
+  if(cur!==getPw()){toast('Current password is incorrect');return}
+  if(nw.length<4){toast('New password must be at least 4 characters');return}
+  if(nw!==conf){toast('New passwords do not match');return}
+  setPw(nw);document.getElementById('curPw').value='';document.getElementById('newPw').value='';document.getElementById('confPw').value='';
+  toast('Password updated successfully');
+}
+function resetPassword(){if(!confirm('Reset password to the default (pokuaa123)?'))return;setPw(DEFAULT_PW);toast('Password reset to default: pokuaa123')}
+document.getElementById('ham').onclick=()=>{document.getElementById('mob').classList.toggle('open')};
+function closeMob(){document.getElementById('mob').classList.remove('open')}
+renderGal();renderShop();
+</script>
+</body>
+</html>
